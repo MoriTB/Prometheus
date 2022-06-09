@@ -9,7 +9,7 @@ def Main():
     # defined host local.
     host = '127.0.0.1'
     # Define the port on which you want to connect
-    port = 8083
+    port = 8103
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     # connect to server on local computer
     s.connect((host, port))
