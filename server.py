@@ -78,7 +78,7 @@ def threaded(c, i):
 def MainS():
     # any address that machine happens to have.
     host = ""
-    port = 8103
+    port = 8105
     # making basic socket.
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     # server socket visible within the machine.
