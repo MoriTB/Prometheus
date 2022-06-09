@@ -9,7 +9,7 @@ def Main():
     # defined host local.
     host = '127.0.0.1'
     # Define the port on which you want to connect
-    port = 8081
+    port = 8083
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     # connect to server on local computer
     s.connect((host, port))
@@ -27,6 +27,15 @@ def Main():
     while True:
         connected = True
         try:
+            # need to send new info every time  we want to continue.
+            message1 = {"cpu_usage": cpu_Usage_cal(1),
+                        "ram_usage": ram_usage(),
+                        "disk_used": disk_used(),
+                        "network_send_byte": network_send(),
+                        "network_receive_byte": network_receive(),
+                        "boot_time": boot_time()}
+            # making it to string then turning to byte for transfer.
+            message = json.dumps(message1)
             # message sent to server
             s.send(bytes(message,encoding="utf-8"))
 
